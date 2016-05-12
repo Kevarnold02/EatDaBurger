@@ -1,0 +1,26 @@
+{
+  "name": "eat_da_burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevarnold02/EatDaBurger.git"
+  },
+  "author": "Kevin Arnold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevarnold02/EatDaBurger/issues"
+  },
+  "homepage": "https://github.com/Kevarnold02/EatDaBurger#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.5",
+    "mysql": "^2.10.2"
+  }
+}
