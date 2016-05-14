@@ -39,12 +39,13 @@ router.post('/burger/create', function(req, res) {
 // 	});
 // });
 
-// router.delete('/burgers/delete/:id', function(req,res) {
-// 	var condition = 'id = ' + req.params.id;
+router.delete('/burger/delete/:id', function(req,res) {
+	var condition = 'id = ' + req.params.id;
 
-// 	burger.delete(condition, function(data){
-// 		res.redirect('/burgers');
-// 	});
-// });
+	burgers.delete(condition, function(data){
+		console.log(data);
+		res.redirect('/burger');
+	});
+});
 
 module.exports = router;
