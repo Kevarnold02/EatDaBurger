@@ -1,2 +1,2 @@
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Jr Bacon Cheeseburger', false, date);
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('California Burger', false, date);
+INSERT INTO burgers (burger_name, date) VALUES ('Jr Bacon Cheeseburger', now());
+INSERT INTO burgers (burger_name, date) VALUES ('California Burger', now());
