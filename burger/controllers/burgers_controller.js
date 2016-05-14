@@ -23,29 +23,29 @@ router.post('/burgers/create', function(req, res) {
 	});
 });
 
-// router.post('/burgers/create', function(req,res) {
-// 	burgers.create(['burger_name', 'devoured', 'date'], [req.body.burger_name, req.body.devoured, req.body.date], function(data){
-// 		res.redirect('/burgers')
-// 	});
-// });
+router.post('/burgers/devour', function(req,res) {
+	burgers.update(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], function(data){
+		res.redirect('/burgers')
+	});
+});
 
 router.put('/burgers/update/:id', function(req,res) {
 	var condition = 'id = ' + req.params.id;
 
 	console.log('condition', condition);
 
-	burgers.update({'devoured' : req.body.devoured}, condition, function(data){
+	burgers.update({'devoured' : true}, condition, function(data){
 		res.redirect('/burgers');
 	});
 });
 
-router.delete('/burgers/delete/:id', function(req,res) {
-	var condition = 'id = ' + req.params.id;
+// router.delete('/burgers/delete/:id', function(req,res) {
+// 	var condition = 'id = ' + req.params.id;
 
-	burgers.delete(condition, function(data){
-		console.log(data);
-		res.redirect('/burgers');
-	});
-});
+// 	burgers.delete(condition, function(data){
+// 		console.log(data);
+// 		res.redirect('/burgers');
+// 	});
+// });
 
 module.exports = router;
