@@ -35,18 +35,28 @@ var orm = {
     //vals is an array of values that we want to save to cols
     //cols are the columns we want to insert the values into
     
-
+//INSERT INTO burgers (burger_name, date) VALUES ('Mushroom Burger', now());
     create: function(table, cols, vals, cb) {
       var queryString = 'INSERT INTO ' + table;
 
       queryString = queryString + ' (';
       queryString = queryString + cols.toString();
-      queryString = ', date';
       queryString = queryString + ') ';
       queryString = queryString + 'VALUES (';
       queryString = queryString + printQuestionMarks(vals.length);
-      queryString = queryString + ', now()';
+      // queryString = queryString + ', now()';
       queryString = queryString + ') ';
+
+
+
+      // queryString = queryString + ' (';
+      // queryString = queryString + cols.toString();
+      // queryString = ', date';
+      // queryString = queryString + ') ';
+      // queryString = queryString + 'VALUES (';
+      // queryString = queryString + printQuestionMarks(vals.length);
+      // queryString = queryString + ', now()';
+      // queryString = queryString + ') ';
 
       console.log(queryString)
 
