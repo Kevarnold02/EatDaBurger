@@ -41,7 +41,7 @@ var orm = {
 
       queryString = queryString + ' (';
       queryString = queryString + cols.toString();
-      queryString += ',date';
+      queryString = ',date';
       queryString = queryString + ') ';
       queryString = queryString + 'VALUES (';
       queryString = queryString + printQuestionMarks(vals.length);

@@ -4,7 +4,7 @@ Here is where you setup a model for how to interface with the database.
 
 var orm = require('../config/orm.js');
 
-var burger = {
+var burgers = {
 	all: function(cb) {
 		orm.all('burgers', function(res){
 			cb(res);
@@ -28,7 +28,7 @@ var burger = {
 	}
 };
 
-module.exports = burger;
+module.exports = burgers;
 
 // burger.delete(condition, function(data){
 // 	res.redirect('/burgers');

@@ -6,10 +6,10 @@ var router = express.Router();
 var burgers = require('../models/burger.js');
 
 router.get('/', function(req,res) {
-	res.redirect('/burger')
+	res.redirect('/burgers')
 });
 
-router.get('/burger', function(req,res) {
+router.get('/burgers', function(req,res) {
 	burgers.all(function(data){
 		var hbsObject = {burgers : data}
 		console.log(hbsObject)
@@ -17,9 +17,9 @@ router.get('/burger', function(req,res) {
 	});
 });
 
-router.post('/burger/create', function(req, res) {
-	burgers.create(['burger_name'], [req.body.name], function(data) {
-		res.redirect('/burger')
+router.post('/burgers/create', function(req, res) {
+	burgers.create(['burger_name'], [req.body.burger_name], function(data) {
+		res.redirect('/burgers')
 	});
 });
 
@@ -39,12 +39,12 @@ router.post('/burger/create', function(req, res) {
 // 	});
 // });
 
-router.delete('/burger/delete/:id', function(req,res) {
+router.delete('/burgers/delete/:id', function(req,res) {
 	var condition = 'id = ' + req.params.id;
 
 	burgers.delete(condition, function(data){
 		console.log(data);
-		res.redirect('/burger');
+		res.redirect('/burgers');
 	});
 });
 
