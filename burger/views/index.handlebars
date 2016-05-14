@@ -8,13 +8,12 @@
       <li>
         <!-- {{this.name}} -->
 
-        <form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
           {{this.burger_name}}
           <input type="hidden" name="devoured" value="true">
           <button type="submit">Devour this burger?</button>
         </form>
-
-        <!-- {{> burgers/delete-cat}} -->
+        
       </li>
     {{/unless}}
   {{/each}}
@@ -25,24 +24,24 @@
 <ul>
   {{#each burgers}}
     {{#if this.devoured}}
-      <li>
-        
-
-        <form action="burger/delete/{{this.id}}?_method=DELETE" method="POST">
+      <li>        
+        <p> {{this.burger_name}} </p>
+       <!--  <form action="burger/delete/{{this.id}}?_method=DELETE" method="POST">
           {{this.burger_name}}
           <input type="hidden" name="id" value="{{this.id}}">
           <button type="submit">Burger go bye bye</button>
-        </form>
-
-        <!-- {{> burgers/delete-cat}} -->
+        </form> -->
+       
       </li>
     {{/if}}
   {{/each}}
 </ul>
-<!-- 
-<h2>Add a Cat</h2>
+
+<h2>Add a Burger</h2>
 <form class="create-update-form" action="burgers/create" method="POST">
 
+  <textarea class="form-control input-lg" type="text" name="burger_name"> </textarea>
+<!-- 
   <div class="form-group">
     <label for="ca">Cat Name:</label>
     <input type="text" id="ca" name="name">
@@ -52,7 +51,7 @@
     <label for="slee">Sleepy?</label><br>
     <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
     <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+  </div> -->
 
-  <button type="submit">Add Cat</button>
-</form> -->
+  <button type="submit">Add Burger</button>
+</form>
